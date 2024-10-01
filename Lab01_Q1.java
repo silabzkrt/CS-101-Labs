@@ -12,6 +12,7 @@ public class Lab01_Q1
       String courseandSemester;
       
       // First initialize the course & semester information
+
       String courseAndSemester = "CS 101 in Fall";
       
       // Then print out welcome message

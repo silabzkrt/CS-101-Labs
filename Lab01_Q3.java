@@ -9,8 +9,8 @@ public class Lab01_Q3 {
     //So first we should find Turkey's total area also distribution of the dryland and the water
  
  public static void main(String[] args) {
-     double worldtotalarea = 510072000;
-     double turkeytotalarea = worldtotalarea / 6510.42;
+     final double worldtotalarea = 510072000;
+     final double turkeytotalarea = worldtotalarea / 6510.42;
      double turkeydryland = (turkeytotalarea * 76) / 77;
      double turkeywater = turkeytotalarea - turkeydryland;
      System.out.println("Turkey has " + (int)turkeydryland + " km2 dryland" + " and " + (int)turkeywater + " km2 water.");
