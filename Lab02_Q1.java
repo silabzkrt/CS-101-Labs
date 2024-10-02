@@ -3,12 +3,12 @@ import java.util.Scanner;
 
 public class Lab02_Q1 {
     public static void main(String[] args) {
-        Scanner in = new Scanner (System.in);
+        Scanner sc = new Scanner (System.in);
         System.out.print("Enter volume of sphere: ");
         
 
         // define and input volume 
-        double V = in.nextDouble();
+        double V = sc.nextDouble();
         System.out.print(V);
 
         // find and print radius
@@ -16,7 +16,7 @@ public class Lab02_Q1 {
         System.out.println("The radius of the sphere is: " +  r);
 
         // find and print surface area
-        double A = 4 * Math.PI * (int)Math.sqrt(r);
+        double A = 4 * Math.PI * Math.sqrt(r);
         System.out.println("The surface area of the sphere is: " + A);
 
 
