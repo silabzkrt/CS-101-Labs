@@ -3,21 +3,22 @@ import java.util.Scanner;
 
 public class Lab02_Q1 {
     public static void main(String[] args) {
-        Scanner in = new Scanner (System.in);
-        System.out.print("Enter volume of sphere: ");
-        
-
-        // define and input volume 
-        double V = in.nextDouble();
-        System.out.print(V);
+        System.out.print("Enter volume of sphere: " );
+        Scanner sc = new Scanner (System.in);
+        //input volume
+        double V = sc.nextDouble();
 
         // find and print radius
-        double r = Math.pow (((3 * V) / (4 * Math.PI)), 1 / 3 );
-        System.out.println("The radius of the sphere is: " +  r);
+        double r = Math.cbrt ((3 * V) / (4 * Math.PI));
+        System.out.print("The radius of the sphere is: " );
+        System.out.printf("%.1f %n",r);
 
         // find and print surface area
-        double A = 4 * Math.PI * (int)Math.sqrt(r);
-        System.out.println("The surface area of the sphere is: " + A);
+        double A = 4 * Math.PI * Math.pow(r,2);
+        System.out.print("The surface area of the sphere is: ");
+        System.out.printf("%.1f", A);
+
+        sc.close();
 
 
 

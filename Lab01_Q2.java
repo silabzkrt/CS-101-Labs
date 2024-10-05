@@ -19,6 +19,6 @@ public class Lab01_Q2 {
      //In order to express (24-0.222)^-1/6 we have to use Math.pow command as well
   
      double expression3 = 3 * Math.pow((24 - 0.222), (- 1 / 6));
-     System.out.println("Expression 3 evaluates to:" + expression3); }
+     System.out.println("Expression 3 evaluates to: " + expression3); }
     
 }

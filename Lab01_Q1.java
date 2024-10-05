@@ -23,8 +23,8 @@ public class Lab01_Q1
       // Now print out the grading policy
       System.out.println( "There are "+ LABS_COUNT + " lab sessions this semester." );
       System.out.println( "Labs make up " + LABS_GRADE_PERCENT + "% of your total grade." );
-      System.out.println( "This lab:\t" + GRADE_PERCENT_PER_LAB + "points" );
-      System.out.println( "All labs:\t" + LABS_GRADE_PERCENT + "points" );
+      System.out.println( "This lab:\t" + GRADE_PERCENT_PER_LAB + " points" );
+      System.out.println( "All labs:\t" + LABS_GRADE_PERCENT + " points" );
       System.out.println( "Don't let the low weight fool you. Labs are extremely important!" );
       
       // Finally wish them luck and finish
