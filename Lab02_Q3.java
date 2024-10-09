@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Lab02_Q3alt2 {
+public class Lab02_Q3 {
   public static void main(String[] args) {
     // we define and open the Scanner
     Scanner sc = new Scanner (System.in);
