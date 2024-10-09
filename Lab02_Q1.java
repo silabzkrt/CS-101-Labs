@@ -15,7 +15,10 @@ public class Lab02_Q1 {
 
         // find and print surface area
         double A = 4 * Math.PI * Math.sqrt(r);
-        System.out.println("The surface area of the sphere is: " + A);
+        System.out.print("The surface area of the sphere is: ");
+        System.err.printf("%.2f%n", A);
+
+        sc.close();
 
 
 

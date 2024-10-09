@@ -30,9 +30,9 @@ public class Lab02_Q2alt {
             String B = "EARTHLING TWO "+ "(" + earthling2 + " kg" + ")";
             
     
-        System.out.format("%30s %10s %10s %10s %12s%n", "", "VENUS", "MARS", "JUPITER", "PLUTO\n");
-        System.out.format("%30s %10.2f %10.2f %10.2f %10.2f%n", A, earthling1venus, earthling1mars, earthling1jupiter, earthling1pluton);
-        System.out.format("%30s %10.2f %10.2f %10.2f %10.2f%n", B, earthling2venus, earthling2mars, earthling2jupiter, earthling2pluton);
+        System.out.printf("%30s %10s %10s %10s %11s%n", "", "VENUS", "MARS", "JUPITER", "PLUTO");
+        System.out.printf("%30s %10.2f %10.2f %10.2f %10.2f%n", A, earthling1venus, earthling1mars, earthling1jupiter, earthling1pluton);
+        System.out.printf("%30s %10.2f %10.2f %10.2f %10.2f%n", B, earthling2venus, earthling2mars, earthling2jupiter, earthling2pluton);
 
         
         sc.close();   
