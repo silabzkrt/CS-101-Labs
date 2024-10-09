@@ -29,6 +29,8 @@ public class Lab02_Q3alt2 {
     String minute= time.substring(colon + 1);
     String hour = time.substring(0, colon);
 
+    //we print the substring as asked of us
+
     System.out.println("Date: " + day);
     System.out.println("Day: " + weekday);
     System.out.println("Month: "+ month);
