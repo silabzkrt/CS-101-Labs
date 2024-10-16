@@ -8,6 +8,7 @@ public class Lab02_Q3 {
     System.out.println("Enter date and time: ");
     //we'll read input and trim spaces
     String input = sc.nextLine().trim();
+    // incase the user inputs spaces, we remove the axtra spaces by replace
     String newInput = input.replace(" ","" );
     
     //we'll define where to find slashes, commas and dashes
