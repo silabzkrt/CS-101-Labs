@@ -40,7 +40,7 @@ public class Lab06_Q2 {
                 hasUppercase = true;
             } else if (isLowerCase(ch)) {
                 hasLowercase = true;
-            } else if (ch >= '0' && ch <= '9') {  // Check for digit without built-in methods
+            } else if (ch >= '0' && ch <= '9') {  
                 hasDigit = true;
             }
     
