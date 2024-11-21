@@ -83,24 +83,26 @@ private static void merge(int[] arr, int[] temp, int left, int mid, int right) {
     return mostCommon;
 }
 
-public static int findMostCommonB(int[] arr) { // we follow the same steps for array B
-    int maxCount = 0, mostCommon = arr[0];
+public static int findMostCommonB(int[] arr) {
+    int[] counters = new int[arr.length]; // Create an array of counters
+    int maxCount = 0;
+    int mostCommon = arr[0];
 
     for (int i = 0; i < arr.length; i++) {
-        int count = 0;
         for (int j = 0; j < arr.length; j++) {
             if (arr[i] == arr[j]) {
-                count++;
+                counters[i]++; // Increase the counter for the current element
             }
         }
 
-        if (count > maxCount) {
-            maxCount = count;
+        // Update most common element if the current count exceeds the max count
+        if (counters[i] > maxCount) {
+            maxCount = counters[i];
             mostCommon = arr[i];
         }
     }
 
-    return mostCommon;
+    return mostCommon; // Return the most common value
 }
 public static void main(String[] args) {
     Random random = new Random();
