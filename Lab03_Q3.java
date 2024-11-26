@@ -114,8 +114,6 @@ public class Lab03_Q3 {
     else {
         System.out.println("Username not found! Goodbye!");
     }
-       else {
-       System.out.println ("Wrong password!); }
 
        sc.close();
 }    
