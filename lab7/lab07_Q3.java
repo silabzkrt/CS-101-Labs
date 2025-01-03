@@ -17,10 +17,14 @@ public class lab07_Q3 {
     public static void displayMovies (ArrayList<String> movies) {
         System.out.println("Movie List: ");
         for (int i = 0; i < movies.size(); i++){
-            System.out.println("-" + movies.get(i));
+            System.out.println((i+1) + ". " + movies.get(i));
         }
     }
-   
+
+    public static void displayReviews (ArrayList<String> movies,  ArrayList<ArrayList <String> > allReviews,
+        ArrayList<Double>totalRatings, ArrayList<Integer>reviewCounts) {
+        
+    }
 
     public static void main(String[] args) {
         Scanner sc = new Scanner (System.in);
@@ -46,12 +50,63 @@ public class lab07_Q3 {
                     displayMovies(movieList);
                     break;
                 case 2:
+                    if (movieList.isEmpty()) {
+                        System.out.println("There's no movie available to delete!");
+                        break;
+                    }
+                    displayMovies(movieList);
+                    int removed = sc.nextInt() - 1;
+                   if (removed >= 0 && removed < movieList.size()){
+                    ArrayList <String> oldList = (ArrayList<String>)movieList.clone();
+                    movieList.remove(removed);
+                    allReviews.remove(removed);
+                    totalRatings.remove(removed);
+                    reviewCounts.remove(removed);
+                    System.out.println(oldList.get(removed) + " has been removed.");
+                   }
                     break;
                 case 3:
-                    
+                    System.out.println("Select a movie to review");
+                    displayMovies(movieList);
+                    System.out.print("Enter movie number: ");
+                    int reviewNumber = sc.nextInt();
+                    if (reviewNumber > 0 && reviewNumber <= movieList.size()) {
+                        System.out.print("Enter you review: ");
+                        String review = sc.next();
+                        System.out.print("Enter your rating (1-5): ");
+                        int rate = sc.nextInt();
+                        while (rate > 5 && 1 > rate) {
+                            System.out.println("Your rate should be between 1 and 5! \nTry again");
+                            System.out.print("Enter your rating (1-5): ");
+                            rate = sc.nextInt();
+                        }
+                        allReviews.get(reviewNumber).add(review);
+                        totalRatings.set(reviewNumber, totalRatings.get(reviewNumber) + rate);
+                        reviewCounts.set(reviewNumber, reviewCounts.get(reviewNumber) + 1);
+                        System.out.println("Review and rating submitted!");
+                    }
                     break;
                 case 4:
-                    //TODO
+                   if (movieList.isEmpty()) {
+                    System.out.println("There's no movies view! Add movies and reviews first");
+                    break;
+                   }
+                   else {
+                    for (int i = 0; i < movieList.size(); i++){
+                        System.out.println((i+1) + ". " + movieList.get(i));
+                        double averageRate = totalRatings.get(i) / reviewCounts.get(i);
+                        System.out.println("Average Rating: " + averageRate);
+                        System.out.println("Reviews");
+                        if (allReviews.isEmpty()) {
+                            System.out.println("No reviews yet");
+                        }
+                        else {
+                            for (String review : allReviews.get(i)) {
+                            System.out.println("-" + review);  
+                            }
+                        }
+                    }
+                   }
                     break;
             }
         } while (selected != 5);

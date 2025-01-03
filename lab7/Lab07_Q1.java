@@ -1,4 +1,7 @@
 package lab7;
+
+import java.util.Random;
+
 public class Lab07_Q1 {
     // number of rows come from matrix 1, columns come from matrix 2
     /* multiplying a matrix means combining the numbers in a row of the first matrix with the
@@ -112,28 +115,29 @@ public class Lab07_Q1 {
         return isSubset;
     }
     public static void main (String [] args) {
+        Random random = new Random();
         int [][] matrixOne = {
-            {1,2,3} , 
-            {4,5,6}
+            {random.nextInt(1,10),random.nextInt(1,10),random.nextInt(1,10)} , 
+            {random.nextInt(1,10),random.nextInt(1,10),random.nextInt(1,10)}
         };
         int [][] matrixTwo = {
-            {7,8},
-            {9,10},
-            {11,12}
+            {random.nextInt(1,10),random.nextInt(1,10)},
+            {random.nextInt(1,10),random.nextInt(1,10)},
+            {random.nextInt(1,10),random.nextInt(1,10)}
         };
         int [][] matrixSquare = {
-            {1,0,0},
-            {2,1,0},
-            {3,4,1}
+            {random.nextInt(1,10),random.nextInt(1,10),random.nextInt(1,10)} , 
+            {random.nextInt(1,10),random.nextInt(1,10),random.nextInt(1,10)} , 
+            {random.nextInt(1,10),random.nextInt(1,10),random.nextInt(1,10)} 
         };
         int [][] childMatrix = {
-            {1,5} , 
-            {8,9}
+            {random.nextInt(1,10),random.nextInt(1,10)}, 
+            {random.nextInt(1,10),random.nextInt(1,10)}
         };
         int [][] parentMatrix = {
-            {1,0,2,3} , 
-            {4,1,5,6} , 
-            {7,8,9,10}
+            {random.nextInt(1,10),random.nextInt(1,10),random.nextInt(1,10),random.nextInt(1,10)},
+            {random.nextInt(1,10),random.nextInt(1,10),random.nextInt(1,10),random.nextInt(1,10)},
+            {random.nextInt(1,10),random.nextInt(1,10),random.nextInt(1,10),random.nextInt(1,10)},
         };
 
         System.out.println("Matrix One: ");
