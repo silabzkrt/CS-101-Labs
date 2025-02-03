@@ -1,9 +1,9 @@
 package lab8;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class SkyBattleGame 
-{
+public class SkyBattleGame {
     // Game Settings
     public final static int COLS = 10;
     public final static int ROWS = 10;
@@ -22,37 +22,36 @@ public class SkyBattleGame
 
     // Symbols
     public final static char EMPTY_COL_SYMBOL = ' ';
-    public final static char DARK_KNIGHT_SYMBOL = '♘';
-    public final static char KNIGHT_SYMBOL = '♞';
+    public final static char DARK_KNIGHT_SYMBOL = 'x';
+    public final static char KNIGHT_SYMBOL = 'o';
 
     // Game Members
     public static int score = 0;
     private static BattleManager battleManager;
     private static Scanner scanner;
 
-    public static void main(String[] args) 
-    {
+    public static void main(String[] args) {
         initializeGame();
         playGame();
         endGame();
     }
 
     /*
-     * Initializes the battleManager to set up the game’s mechanics and starts the scanner to
+     * Initializes the battleManager to set up the game’s mechanics and starts the
+     * scanner to
      * read user input.
      */
-    private static void initializeGame() 
-    {
+    private static void initializeGame() {
         battleManager = new BattleManager();
         scanner = new Scanner(System.in);
     }
 
     /*
-     * Runs the main game loop, which continues until the Knight’s health is depleted. It 
+     * Runs the main game loop, which continues until the Knight’s health is
+     * depleted. It
      * repeatedly renders the game and handles user input.
      */
-    private static void playGame() 
-    {
+    private static void playGame() {
         while (battleManager.getKnight().isAlive()) {
             renderGame();
             handleUserInput();
@@ -62,18 +61,17 @@ public class SkyBattleGame
     /*
      * Prints the final score and closes the scanner when the game is over.
      */
-    private static void endGame() 
-    {
+    private static void endGame() {
         System.out.println("Game over! You have died. Your total score is: " + score);
         scanner.close();
     }
 
     /*
-     * Displays the current state of the game by rendering the battleground and game information 
+     * Displays the current state of the game by rendering the battleground and game
+     * information
      * (Knight's stats and points).
      */
-    private static void renderGame() 
-    {
+    private static void renderGame() {
         Knight knight = battleManager.getKnight();
         ArrayList<BattleColumn> columns = battleManager.getColumns();
 
@@ -84,10 +82,10 @@ public class SkyBattleGame
     }
 
     /*
-     * Renders the grid of battle columns and displays the Knight's position within the grid.
+     * Renders the grid of battle columns and displays the Knight's position within
+     * the grid.
      */
-    private static void displayBattleground(Knight knight, ArrayList<BattleColumn> columns) 
-    {
+    private static void displayBattleground(Knight knight, ArrayList<BattleColumn> columns) {
         for (int i = 0; i < ROWS; i++) {
             System.out.print("|");
             for (int j = 0; j < COLS; j++) {
@@ -105,31 +103,29 @@ public class SkyBattleGame
     /*
      * Prints the current game points and the Knight’s health.
      */
-    private static void displayGameInformation(Knight knight) 
-    {
+    private static void displayGameInformation(Knight knight) {
         System.out.println("Game point: " + score);
         System.out.println(knight);
     }
 
     /*
-     * Reads the player's input for knight movements (up, down, or stay still) and directs it to 
+     * Reads the player's input for knight movements (up, down, or stay still) and
+     * directs it to
      * battleManager to execute.
      */
-    private static void handleUserInput() 
-    {
+    private static void handleUserInput() {
         String direction;
-        do
-        {
+        do {
             System.out.println("Enter a direction to move the knight (w/up, d/stay still, s/down):");
             direction = scanner.next();
         } while (!battleManager.handleMovement(direction));
     }
 
     /*
-     * Checks whether or not the Knight is located at the given coordinates (x, y) in the grid.
+     * Checks whether or not the Knight is located at the given coordinates (x, y)
+     * in the grid.
      */
-    private static boolean isKnightPositionedAt(Knight knight, int x, int y) 
-    {
+    private static boolean isKnightPositionedAt(Knight knight, int x, int y) {
         return x == 0 && knight.getY() == y;
     }
 }
