@@ -86,7 +86,7 @@ public class User {
                 budget -= 40;
                 pets.add(pet);
             }
-        }
+        }sc.close();
     }
     public void adoptPet (Pet pet){
         if (pet.getOwner() == null) {
